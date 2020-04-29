@@ -5,16 +5,17 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="A Blog Website">
+    <meta name="author" content="Yiğit Hacıefendioğlu">
 
     <title>Spring Blog - @ViewBag.Title</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    @Styles.Render("~/Content/bootstrap")
 
     <!-- Custom styles for this template -->
     @Styles.Render("~/Content/css")
+
 </head>
 
 <body>
@@ -22,26 +23,20 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">SpringBlog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">
-                            Home
-                            <span class="sr-only">(current)</span>
-                        </a>
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
                     </li>
                 </ul>
             </div>
@@ -56,7 +51,7 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
 
-               @RenderBody()
+                @RenderBody()
 
             </div>
 
@@ -81,31 +76,8 @@
                     <h5 class="card-header">Categories</h5>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a href="#">Web Design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">HTML</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Freebies</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a href="#">JavaScript</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">CSS</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tutorials</a>
-                                    </li>
-                                </ul>
+                            <div class="col">
+                                @Html.Action("CategoriesPartial", "Home")
                             </div>
                         </div>
                     </div>
@@ -135,11 +107,11 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 
     @RenderSection("scripts", false)
+
 </body>
 
 </html>

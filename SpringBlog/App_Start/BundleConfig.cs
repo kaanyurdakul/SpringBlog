@@ -26,11 +26,11 @@ namespace SpringBlog
                       "~/Content/Site.css"));
 
             // normalde bunu yazmaya gerek yok, release mod'da çalıştırırken farkı göstermek istedik
-#if DEBUG
-            BundleTable.EnableOptimizations = false;
-#else
+            #if DEBUG
+                BundleTable.EnableOptimizations = false;
+            #else
                 BundleTable.EnableOptimizations = true;
-#endif
+            #endif
         }
     }
 }

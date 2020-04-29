@@ -14,6 +14,7 @@ namespace SpringBlog.Models
         [MaxLength(30)]
         public string CategoryName { get; set; }
 
+
         public virtual ICollection<Post> Posts { get; set; }
     }
 }

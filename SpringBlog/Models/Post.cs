@@ -31,13 +31,12 @@ namespace SpringBlog.Models
 
         [Required]
         public DateTime? CreationTime { get; set; }
-       
+
         [Required]
         public DateTime? ModificationTime { get; set; }
 
+
         public virtual ApplicationUser Author { get; set; }
-
         public virtual Category Category { get; set; }
-
     }
 }
