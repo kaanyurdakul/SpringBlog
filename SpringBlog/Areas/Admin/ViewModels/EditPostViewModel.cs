@@ -8,8 +8,10 @@ using System.Web.Mvc;
 
 namespace SpringBlog.Areas.Admin.ViewModels
 {
-    public class NewPostViewModel
+    public class EditPostViewModel
     {
+        public int Id { get; set; }
+
         public int CategoryId { get; set; }
 
         [Required]
@@ -18,6 +20,14 @@ namespace SpringBlog.Areas.Admin.ViewModels
 
         [AllowHtml]
         public string Content { get; set; }
+
+        public string CurrentFeaturedImage { get; set; }
+
+        [Display(Name = "Created")]
+        public DateTime CreationTime { get; set; }
+
+        [Display(Name = "Last Modified")]
+        public DateTime ModificationTime { get; set; }
 
         [PostedImage]
         public HttpPostedFileBase FeaturedImage { get; set; }
