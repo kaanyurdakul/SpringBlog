@@ -46,7 +46,7 @@ namespace SpringBlog.Helpers
                 manager.Create(role);
             }
 
-            if (!context.Users.Any(u => u.UserName == "yigith1@gmail.com"))
+            if (!context.Users.Any(u => u.UserName == "kaanyrdkl@gmail.com"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
